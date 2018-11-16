@@ -6,6 +6,8 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final String TAG = MainActivity.class.getSimpleName();
+
     private Starks starks;
     private Boltons boltons;
     private House house;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.v(TAG,"onCreate method");
         /*starks = new Starks(); //house = new Starks();
         boltons = new Boltons(); // house = new Boltons();
         war = new War(starks,boltons);
@@ -37,5 +40,11 @@ public class MainActivity extends AppCompatActivity {
         battleComponent.getCash();
         battleComponent.getSoldiers();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(TAG,"in onResume method");
     }
 }
